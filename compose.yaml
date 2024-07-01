@@ -19,7 +19,8 @@ services:
       - 3000:3000
     restart: unless-stopped
     environment:
-      - GF_INSTALL_PLUGINS=grafana-clock-panel
+      - GF_SECURITY_ADMIN_USER=brandon
+      - GF_SECURITY_ADMIN_PASSWORD=password
     volumes:
       - ./grafana:/etc/grafana/provisioning/datasources
       - grafana_data:/var/lib/grafana
@@ -34,7 +35,28 @@ services:
       - influxdb2_data:/var/lib/influxdb2
       - ./influxdb2/config:/etc/influxdb2
       - ./influxdb2/scripts:/docker-entrypoint-initdb.d
+  telegraf:
+    image: telegraf:latest
+    pid: "host"
+    container_name: telegraf
+    user: telegraf:999
+    restart: always
+    entrypoint: /bin/bash -c "/entrypoint.sh telegraf"
+    extra_hosts:
+      - "dockerlab:host-gateway"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /:/hostfs:ro
+    environment:
+      - HOST_ETC=/hostfs/etc
+      - HOST_PROC=/hostfs/proc
+      - HOST_SYS=/hostfs/sys
+      - HOST_VAR=/hostfs/var
+      - HOST_RUN=/hostfs/run
+      - HOST_MOUNT_PREFIX=/hostfs
 volumes:
   prom_data:
   grafana_data:
   influxdb2_data:
+
