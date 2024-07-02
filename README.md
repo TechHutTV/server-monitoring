@@ -7,7 +7,8 @@ Proxmox Monitoring (InfluxQL) - 10048
 
 UNRAID - 
 
-/bin/bash -c "/entrypoint.sh telegraf && apt update && apt install -y smartmontools && apt install -y lm-sensors && apt install -y nvme-cli"
+https://github.com/golift/telegraf-docker
 
+/bin/bash -c "/entrypoint.sh telegraf"
 
 --user telegraf:$(stat -c '%g' /var/run/docker.sock) 
