@@ -51,7 +51,7 @@ Adding a job for the Node Exporter or multiple node exporters can be done here. 
       - unRAID:9100
 ```
 
-Telegraf cant be configured until after we launch the stack for the first time and setup Influxdb2 as we will need our organization, username, token, and bucket. My default configuration is setup only to monitor docker with some system monitoring plugins commented out. I recommened you read up on their documentation for plugin specific configuration. To monitor docker with the included configuration you'll only need to change the information under the outputs plugin to match your setup
+Telegraf cant be configured until after we launch the stack for the first time and setup Influxdb2 as we will need our organization, username, token, and bucket. My default configuration is setup only to monitor docker with some system monitoring [plugins](https://docs.influxdata.com/telegraf/v1/plugins/) commented out. I recommened you read up on their [documentation](https://docs.influxdata.com/telegraf/v1/get-started/) for plugin specific configuration. To monitor docker with the included configuration you'll only need to change the information under the outputs plugin to match your setup
 ```
 nano telegraf/telegraf.conf
 ```
