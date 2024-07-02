@@ -18,9 +18,6 @@ services:
     ports:
       - 3000:3000
     restart: unless-stopped
-    environment:
-      - GF_SECURITY_ADMIN_USER=brandon
-      - GF_SECURITY_ADMIN_PASSWORD=password
     volumes:
       - ./grafana:/etc/grafana/provisioning/datasources
       - grafana_data:/var/lib/grafana
