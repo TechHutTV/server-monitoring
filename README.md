@@ -79,6 +79,15 @@ To make configuration changes, simple save the edits you make and restart the st
 ```
 docker compose restart
 ```
+## Installing and Starting Node Exporter
+
+The Prometheus node exporter is widely available as a package in the official repos of various Linux distros. To start we will be installing this Exporter on the same machine that we plan on running with Prometheus and Grafana. For Ubuntu and other Debian based distros, you can install it like this:
+
+```sudo apt install prometheus-node-exporter```
+
+While apt should start and enable the systemd service for the node exporter automatically, you can double check that like this:
+
+```sudo systemctl status prometheus-node-exporter```
 
 ## Recommended Dashboards
 
