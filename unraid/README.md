@@ -1,7 +1,7 @@
 # Monitoring Unraid with Telegraf
 
 ## Add your configuration
-Before we add our Telegraf container we need to add our configuration. In this example we are placing it the default directory for Docker comfigurations on Unraid. Change anything here to better fit your setup. When working with my appdata directory in Unraid I generally use the [Dynamix File Manager](https://forums.unraid.net/topic/120982-dynamix-file-manager/) it's an awesome tool that makes navigating shares in the Unraid UI easy.
+Before we add our Telegraf container we need to add our configuration. In this example we are placing it the default directory for Docker configurations on Unraid. Change anything here to better fit your setup. When working with my appdata directory in Unraid I generally use the [Dynamix File Manager](https://forums.unraid.net/topic/120982-dynamix-file-manager/) it's an awesome tool that makes navigating shares in the Unraid UI easy.
 
 First download the [telegraf.conf](https://github.com/TechHutTV/server-monitoring/blob/main/unraid/telegraf.conf) file located in this repository and make any changes you'd like. Most everything my configuration should work as-is Unraid, but you will need to edit the outputs plugin information to properly send data to your InfluxDB 2 bucket. _Note: Use a new bucket specifically for this Unraid instance._
 
@@ -35,9 +35,9 @@ Extra Argument: ```--user telegraf:$(stat -c '%g' /var/run/docker.sock)```
 
 ### Start and Verify
 
-Other than these aqjustments everything should be able to be left as is included in the template. Check over everything and click on apply. Go to your Docker page in Unraid and check to see if the container is running. Check the log files to ensure there are no issues and that all the plugins are properly actived.
+Other than these adjustments everything should be able to be left as is included in the template. Check over everything and click on apply. Go to your Docker page in Unraid and check to see if the container is running. Check the log files to ensure there are no issues and that all the plugins are properly active.
 
-If there are no issues we check check to see if the data is being properly exported to InfluxDB 2. Head over to your dashboard and open the bucket you created for Unraid. It should look like the picture below. Go though the data make sure sure nothing is missing. In my installation I have 7 tags for Docker data under the _messurements ID and another tag for every plugin I have enabled.
+If there are no issues, we check to see if the data is being properly exported to InfluxDB 2. Head over to your dashboard and open the bucket you created for Unraid. It should look like the picture below. Go through the data make sure nothing is missing. In my installation I have 7 tags for Docker data under the _messurements ID and another tag for every plugin I have enabled.
 
 ![Unraid data preview in InfluxDB 2](https://github.com/TechHutTV/server-monitoring/blob/main/unraid/unraid-data-preview.png?raw=true)
 
