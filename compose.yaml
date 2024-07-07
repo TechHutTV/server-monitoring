@@ -36,7 +36,7 @@ services:
     image: telegraf:latest
     pid: "host"
     container_name: telegraf
-    user: telegraf:999
+    user: telegraf:XXX # make sure to run 'getent group docker' on the host for appropriate group number for docker.
     restart: always
     entrypoint: /bin/bash -c "/entrypoint.sh telegraf"
     extra_hosts:
