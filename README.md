@@ -101,5 +101,5 @@ The entire point of this is to have some pretty dashboards. These are the ones I
 
 [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) - 1860
 
-#### Work in Progrgess
+#### Work in Progress
 Feel free to send any feedback or rise any issues. This is a new repo and I'm organizing everything and trying to get it to be as good as I can.
