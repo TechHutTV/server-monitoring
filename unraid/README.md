@@ -1,3 +1,6 @@
+# ⚠️ [REPO HAS MOVED](https://github.com/TechHutTV/homelab/tree/main/monitoring) ⚠️
+This repo will no longer be updated in favor for our [Homelab repository](https://github.com/TechHutTV/homelab/tree/main).
+
 # Monitoring Unraid with Telegraf
 
 ## Add your configuration
