@@ -1,3 +1,6 @@
+# ⚠️ [REPO HAS MOVED](https://github.com/TechHutTV/homelab/tree/main/monitoring) ⚠️
+This repo will no longer be updated in favor for our [Homelab repository](https://github.com/TechHutTV/homelab/tree/main).
+
 # Server Monitoring Stack
 Docker compose featuring Grafana, Prometheus, Influxdb2, and Telegraf. Tested and working with the lastest version of Docker compose. This repository is a companion to the offical guide on our website. That is currently a work in progress. This is designed to be envolving repo as I add services and figure out better way to do this. 
 
